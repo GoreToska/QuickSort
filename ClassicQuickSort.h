@@ -3,22 +3,28 @@
 
 namespace sort
 {
-    inline bool decrease_int(int a, int b) {
+    int insertion_threshold = 350;
+
+    inline bool decrease_int(int a, int b)
+    {
         return a > b;
     }
 
-    inline bool increase_int(int a, int b) {
+    inline bool increase_int(int a, int b)
+    {
         return a < b;
     }
 
-    inline bool decrease_float(int a, int b) {
+    inline bool decrease_float(int a, int b)
+    {
         return a > b;
     }
 
-    inline bool increase_float(int a, int b) {
+    inline bool increase_float(int a, int b)
+    {
         return a < b;
     }
-    
+
 #pragma region Insertion_Sort
     template <typename T, typename Compare>
     void insertion_sort(T* start, T* end, Compare comp)
@@ -74,7 +80,6 @@ namespace sort
 
 #pragma endregion
 
-    // works fine
 #pragma region First_Optimization
     template <typename T, typename Compare>
     T* get_median(T* start, T* end, Compare comp)
@@ -178,4 +183,21 @@ namespace sort
         }
     }
 #pragma endregion
+
+    template <typename T, typename Compare>
+    void sort(T* start, T* end, Compare comp)
+    {
+        end -= 1;
+
+        if (end - start < insertion_threshold)
+        {
+            insertion_sort(start, end, comp);
+            std::cout<<"Insertion\n";
+        }
+        else
+        {
+            std::cout<<"Quick\n";
+            quick_sort_second_optimization(start, end, comp);
+        }
+    }
 }

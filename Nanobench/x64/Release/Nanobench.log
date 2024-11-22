@@ -1,0 +1,4 @@
+﻿E:\Visual Studio\Visual Studio 2022 IDE\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: два или более файлов с именем nanobench.cpp выводят результаты в одно и то же расположение. Это может стать причиной неверного результата сборки.  Включенные файлы — Classes\nanobench.cpp, Nanobench.cpp.
+x64\Release\Nanobench.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+MSVCRT.lib(exe_main.obj) : error LNK2001: неразрешенный внешний символ main.
+D:\CPP Projects\Algols\QuickSort\x64\Release\Nanobench.exe : fatal error LNK1120: неразрешенных внешних элементов: 1

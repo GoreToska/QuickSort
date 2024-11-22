@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuickSort", "QuickSort.vcxproj", "{52A74334-5699-4B35-BB8D-7F0897930D59}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nanobench", "Nanobench\Nanobench.vcxproj", "{E8CEA052-A991-4884-A67C-2D4EE325EC55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Debug|Win32.ActiveCfg = Debug|Win32
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Debug|Win32.Build.0 = Debug|Win32
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Debug|x64.ActiveCfg = Debug|x64
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Debug|x64.Build.0 = Debug|x64
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Release|Win32.ActiveCfg = Release|Win32
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Release|Win32.Build.0 = Release|Win32
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Release|x64.ActiveCfg = Release|x64
+		{52A74334-5699-4B35-BB8D-7F0897930D59}.Release|x64.Build.0 = Release|x64
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Debug|Win32.Build.0 = Debug|Win32
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Debug|x64.ActiveCfg = Debug|x64
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Debug|x64.Build.0 = Debug|x64
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|Win32.ActiveCfg = Release|Win32
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|Win32.Build.0 = Release|Win32
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|x64.ActiveCfg = Release|x64
+		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal

@@ -3,176 +3,176 @@
 
 namespace sort
 {
-	template<typename T>
-	bool decreasing_comparator(const T& a, const T& b)
-	{
-		return a > b;
-	}
+    template <typename T>
+    bool decreasing_comparator(const T& a, const T& b)
+    {
+        return a > b;
+    }
 
-	template<typename T>
-	bool increasing_comparator(const T& a, const T& b)
-	{
-		return a < b;
-	}
+    template <typename T>
+    bool increasing_comparator(const T& a, const T& b)
+    {
+        return a < b;
+    }
 
 #pragma region Insertion_Sort
-	template <typename T>
-	void insertion_sort(T* array, int start, int end)
-	{
-		for (int i = start + 1; i <= end; ++i)
-		{
-			T key = array[i];
-			for (int j = i - 1; j >= 0; --j)
-			{
-				if (array[j] < key)
-				{
-					array[j + 1] = key;
-					break;
-				}
+    template <typename T>
+    void insertion_sort(T* start, T* end)
+    {
+        for (T* i = start + 1; i <= end; ++i)
+        {
+            T key = *i;
+            for (T* j = i - 1; j >= start; --j)
+            {
+                if (*j < key)
+                {
+                    *(j + 1) = key;
+                    break;
+                }
 
-				array[j + 1] = array[j];
-			}
-		}
-	}
+                *(j + 1) = *j;
+            }
+        }
+    }
 
 #pragma endregion
-	// works fine
+    // works fine
 #pragma region Not_Optimized
-	template <typename T>
-	int partition(T* array, int start, int end)
-	{
-		T pivot = array[end];
-		int pivot_index = start - 1;
+    template <typename T>
+    T* partition( T* start, T* end)
+    {
+        T pivot = *end;
+        T* pivot_index = start - 1;
 
-		for (int j = start; j <= end - 1; ++j)
-		{
-			if (array[j] <= pivot)
-			{
-				++pivot_index;
-				std::swap(array[pivot_index], array[j]);
-			}
-		}
+        for (T* j = start; j < end; ++j)
+        {
+            if (*j <= pivot)
+            {
+                ++pivot_index;
+                std::swap(*pivot_index, *j);
+            }
+        }
 
-		std::swap(array[pivot_index + 1], array[end]);
+        std::swap(*(pivot_index + 1), *end);
 
-		return pivot_index + 1;
-	}
+        return pivot_index + 1;
+    }
 
-	template <typename T>
-	void quick_sort_not_optimized(T* array, int start, int end)
-	{
-		if (start >= end)
-			return;
+    template <typename T>
+    void quick_sort_not_optimized(T* start, T* end)
+    {
+        if (start >= end)
+            return;
 
-		int pivot_index = partition(array, start, end);
-		quick_sort_not_optimized(array, start, pivot_index - 1);
-		quick_sort_not_optimized(array, pivot_index + 1, end);
-	}
+        T* pivot_index = partition(start, end);
+        quick_sort_not_optimized(start, pivot_index - 1);
+        quick_sort_not_optimized(pivot_index + 1, end);
+    }
 
 #pragma endregion
 
-	// works fine
+    // works fine
 #pragma region First_Optimization
-	template <typename T>
-	int get_median(T* array, int start, int end)
-	{
-		int mid = start + (end - start) * 0.5;
+    template <typename T>
+    T* get_median(T* start, T* end)
+    {
+        T* mid = start + (end - start) / 2;
 
-		if (array[start] > array[mid])
-			std::swap(array[start], array[mid]);
-		if (array[start] > array[end])
-			std::swap(array[start], array[end]);
-		if (array[mid] > array[end])
-			std::swap(array[mid], array[end]);
+        if (*start > *mid)
+            std::swap(*start, *mid);
+        if (*start > *end)
+            std::swap(*start, *end);
+        if (*mid > *end)
+            std::swap(*mid, *end);
 
-		std::swap(array[mid], array[end]);
+        std::swap(*mid, *end);
 
-		return end;
-	}
+        return end;
+    }
 
-	template <typename T>
-	int median_partition(T* array, int start, int end)
-	{
-		int pivot_index = get_median(array, start, end);
-		T pivot = array[pivot_index];
-		int i = start - 1;
-		
-		for (int j = start; j < end; ++j)
-		{
-			if (array[j] > pivot)
-				continue;
+    template <typename T>
+    T* median_partition(T* start, T* end)
+    {
+        T* pivot_index = get_median(start, end);
+        T pivot = *pivot_index;
+        T* i = start - 1;
 
-			++i;
-			std::swap(array[i], array[j]);
-		}
+        for (T* j = start; j < end; ++j)
+        {
+            if (*j > pivot)
+                continue;
 
-		std::swap(array[i + 1], array[end]);
-		return i + 1;
-	}
+            ++i;
+            std::swap(*i, *j);
+        }
 
-	template <typename T>
-	void quick_sort_first_optimization(T* array, int start, int end)
-	{
-		if (start >= end)
-			return;
+        std::swap(*(i + 1), *end);
+        return i + 1;
+    }
 
-		int pivot_index = median_partition(array, start, end);
-		quick_sort_first_optimization(array, start, pivot_index - 1);
-		quick_sort_first_optimization(array, pivot_index + 1, end);
-	}
+    template <typename T>
+    void quick_sort_first_optimization(T* start, T* end)
+    {
+        if (start >= end)
+            return;
+
+        T* pivot_index = median_partition(start, end);
+        quick_sort_first_optimization(start, pivot_index - 1);
+        quick_sort_first_optimization(pivot_index + 1, end);
+    }
 #pragma endregion
 
-	// works fine
+    // works fine
 #pragma region Second_Optimization
-	template <typename T>
-	void quick_sort_iterative(T* array, int start, int end)
-	{
-		if (end - start < 2)
-			return;
+    template <typename T>
+    void quick_sort_iterative(T* start, T* end)
+    {
+        if (end - start < 2)
+            return;
 
-		std::stack<T> stack;
-		stack.push(start);
-		stack.push(end);
+        std::stack<T*> stack;
+        stack.push(start);
+        stack.push(end);
 
-		while (!stack.empty())
-		{
-			end = stack.top();
-			stack.pop();
-			start = stack.top();
-			stack.pop();
-			int pivot = median_partition(array, start, end);
+        while (!stack.empty())
+        {
+            end = stack.top();
+            stack.pop();
+            start = stack.top();
+            stack.pop();
+            T* pivot = median_partition(start, end);
 
-			if (pivot - 1 > start)
-			{
-				stack.push(start);
-				stack.push(pivot - 1);
-			}
-			if (pivot + 1 < end)
-			{
-				stack.push(pivot + 1);
-				stack.push(end);
-			}
-		}
-	}
+            if (pivot - 1 > start)
+            {
+                stack.push(start);
+                stack.push(pivot - 1);
+            }
+            if (pivot + 1 < end)
+            {
+                stack.push(pivot + 1);
+                stack.push(end);
+            }
+        }
+    }
 
-	template <typename T>
-	void quick_sort_second_optimization(T* array, int start, int end)
-	{
-		if (start >= end)
-			return;
+    template <typename T>
+    void quick_sort_second_optimization( T* start, T* end)
+    {
+        if (start >= end)
+            return;
 
-		int pivot_index = median_partition(array, start, end);
+        T* pivot_index = median_partition(start, end);
 
-		if (pivot_index - start > end - pivot_index)
-		{
-			quick_sort_second_optimization(array, pivot_index + 1, end);
-			quick_sort_iterative(array, start, pivot_index - 1);
-		}
-		else
-		{
-			quick_sort_iterative(array, pivot_index + 1, end);
-			quick_sort_second_optimization(array, start, pivot_index - 1);
-		}
-	}
+        if (pivot_index - start > end - pivot_index)
+        {
+            quick_sort_second_optimization( pivot_index + 1, end);
+            quick_sort_iterative( start, pivot_index - 1);
+        }
+        else
+        {
+            quick_sort_iterative( pivot_index + 1, end);
+            quick_sort_second_optimization( start, pivot_index - 1);
+        }
+    }
 #pragma endregion
 }

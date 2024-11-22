@@ -20,7 +20,7 @@ int main()
 		big_array[i] = rand();
 	}
 
-	sort::quick_sort_second_optimization(big_array, 0, N - 1);
+	sort::quick_sort_second_optimization(big_array, big_array + N);
 
 	/*// 4
 	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4", [&]

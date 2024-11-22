@@ -3,11 +3,19 @@
 
 namespace sort
 {
-    inline bool int_decrease(int a, int b) {
+    inline bool decrease_int(int a, int b) {
         return a > b;
     }
 
-    inline bool int_increase(int a, int b) {
+    inline bool increase_int(int a, int b) {
+        return a < b;
+    }
+
+    inline bool decrease_float(int a, int b) {
+        return a > b;
+    }
+
+    inline bool increase_float(int a, int b) {
         return a < b;
     }
     
@@ -15,7 +23,7 @@ namespace sort
     template <typename T, typename Compare>
     void insertion_sort(T* start, T* end, Compare comp)
     {
-        for (T* i = start + 1; i < end; ++i)
+        for (T* i = start + 1; i <= end; ++i)
         {
             T key = *i;
             T* j = i - 1;

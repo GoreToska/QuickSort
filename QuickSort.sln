@@ -4,6 +4,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuickSort", "QuickSort.vcxp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nanobench", "Nanobench\Nanobench.vcxproj", "{E8CEA052-A991-4884-A67C-2D4EE325EC55}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests\Tests.vcxproj", "{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -28,5 +30,13 @@ Global
 		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|Win32.Build.0 = Release|Win32
 		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|x64.ActiveCfg = Release|x64
 		{E8CEA052-A991-4884-A67C-2D4EE325EC55}.Release|x64.Build.0 = Release|x64
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Debug|Win32.Build.0 = Debug|Win32
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Debug|x64.ActiveCfg = Debug|x64
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Debug|x64.Build.0 = Debug|x64
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Release|Win32.ActiveCfg = Release|Win32
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Release|Win32.Build.0 = Release|Win32
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Release|x64.ActiveCfg = Release|x64
+		{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal

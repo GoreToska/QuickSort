@@ -5,10 +5,8 @@
 #include "Nanobench/Classes/nanobench.cpp"
 #include "ClassicQuickSort.h"
 
-const int N = 10;
+const int N = 5;
 int big_array[N];
-
-
 
 int main()
 {
@@ -21,8 +19,15 @@ int main()
 	{
 		big_array[i] = rand();
 	}
+	
+	for (int i = 0; i < N; ++i)
+	{
+		std::cout << big_array[i] << " ";
+	}
 
-	sort::quick_sort_second_optimization(big_array, big_array + N, sort::int_decrease);
+	std::cout << std::endl;
+
+	sort::quick_sort_second_optimization(big_array, big_array + N - 1, sort::decrease_int);
 
 	/*// 4
 	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4", [&]

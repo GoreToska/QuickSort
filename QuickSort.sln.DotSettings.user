@@ -1,0 +1,17 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d1eedd91_002D9831_002D4ac9_002D92b1_002D3c5aad708499/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestName" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::InsertionSort.&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortNotOptimized.&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortFirstOptimization.&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortSecondOptimization.&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::Test.&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortNotOptimized.BigArray&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortNotOptimized.IntFloat&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortFirstOptimization.BigArray&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortSecondOptimization.BigArray&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortSecondOptimization.IntFloat&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::QuickSortFirstOptimization.IntFloat&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::InsertionSort.IntFloat&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

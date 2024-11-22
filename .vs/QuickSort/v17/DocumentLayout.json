@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\CPP Projects\\Algols\\QuickSort\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}|Tests\\Tests.vcxproj|D:\\CPP Projects\\Algols\\QuickSort\\Tests\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F}|Tests\\Tests.vcxproj|solutionrelative:Tests\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52A74334-5699-4B35-BB8D-7F0897930D59}|QuickSort.vcxproj|D:\\CPP Projects\\Algols\\QuickSort\\QuickSort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{52A74334-5699-4B35-BB8D-7F0897930D59}|QuickSort.vcxproj|solutionrelative:QuickSort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -29,11 +33,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\CPP Projects\\Algols\\QuickSort\\Tests\\test.cpp",
+              "RelativeDocumentMoniker": "Tests\\test.cpp",
+              "ToolTip": "D:\\CPP Projects\\Algols\\QuickSort\\Tests\\test.cpp",
+              "RelativeToolTip": "Tests\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-22T13:36:48.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "utility",
               "DocumentMoniker": "E:\\Visual Studio\\Visual Studio 2022 IDE\\VC\\Tools\\MSVC\\14.41.34120\\include\\utility",
               "ToolTip": "E:\\Visual Studio\\Visual Studio 2022 IDE\\VC\\Tools\\MSVC\\14.41.34120\\include\\utility",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClassicQuickSort.h",
               "DocumentMoniker": "D:\\CPP Projects\\Algols\\QuickSort\\ClassicQuickSort.h",
               "RelativeDocumentMoniker": "ClassicQuickSort.h",
@@ -56,20 +73,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QuickSort.cpp",
               "DocumentMoniker": "D:\\CPP Projects\\Algols\\QuickSort\\QuickSort.cpp",
               "RelativeDocumentMoniker": "QuickSort.cpp",
               "ToolTip": "D:\\CPP Projects\\Algols\\QuickSort\\QuickSort.cpp",
               "RelativeToolTip": "QuickSort.cpp",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAkwBIAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAIwI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T12:51:47.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "nanobench.h",
               "DocumentMoniker": "D:\\CPP Projects\\Algols\\QuickSort\\Nanobench\\Classes\\nanobench.h",
               "RelativeDocumentMoniker": "Nanobench\\Classes\\nanobench.h",
@@ -81,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "nanobench.cpp",
               "DocumentMoniker": "D:\\CPP Projects\\Algols\\QuickSort\\Nanobench\\Classes\\nanobench.cpp",
               "RelativeDocumentMoniker": "Nanobench\\Classes\\nanobench.cpp",

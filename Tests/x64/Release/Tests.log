@@ -1,0 +1,143 @@
+﻿  test.cpp
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+      D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,44):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          D:\CPP Projects\Algols\QuickSort\Tests\test.cpp(23,11):
+          выполняется компиляция ссылки на экземпляр шаблон функции "void sort::insertion_sort<float,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,39): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,39): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,39): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,39): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(31,39): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+      D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,26):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          D:\CPP Projects\Algols\QuickSort\Tests\test.cpp(57,11):
+          выполняется компиляция ссылки на экземпляр шаблон функции "void sort::quick_sort_not_optimized<float,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(70,26):
+          выполняется компиляция ссылки на экземпляр шаблон функции "T *sort::partition<T,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,22): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,22): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,22): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,22): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(52,22): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+      D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,27):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          D:\CPP Projects\Algols\QuickSort\Tests\test.cpp(91,11):
+          выполняется компиляция ссылки на экземпляр шаблон функции "void sort::quick_sort_first_optimization<float,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(122,26):
+          выполняется компиляция ссылки на экземпляр шаблон функции "T *sort::median_partition<T,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,23): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,23): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,23): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,23): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(105,23): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+      D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,26):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(122,26):
+          выполняется компиляция ссылки на экземпляр шаблон функции "T *sort::median_partition<T,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(99,26):
+          выполняется компиляция ссылки на экземпляр шаблон функции "T *sort::get_median<T,bool(__cdecl *)(int,int)>(T *,T *,Compare)"
+          with
+          [
+              T=float,
+              Compare=bool (__cdecl *)(int,int)
+          ]
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,18): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,18): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,18): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,18): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,18): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,26): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,26): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,26): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,26): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,26): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,18): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,18): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,18): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,18): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(86,18): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,24): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,24): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,24): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,24): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,24): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,18): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,18): warning C4244:         with
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,18): warning C4244:         [
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,18): warning C4244:             T=float
+D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(88,18): warning C4244:         ]
+  (компиляция исходного файла "test.cpp")
+  
+  Tests.vcxproj -> D:\CPP Projects\Algols\QuickSort\x64\Release\Tests.exe

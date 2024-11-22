@@ -5,247 +5,141 @@
 #include "Nanobench/Classes/nanobench.cpp"
 #include "ClassicQuickSort.h"
 
-const int N = 5;
-int big_array[N];
+const int N1 = 4;
+int array1[N1];
+
+const int N2 = 16;
+int array2[N2];
+
+const int N3 = 64;
+int array3[N3];
+
+const int N4 = 100;
+int array4[N4];
+
+const int N5 = 128;
+int array5[N5];
+
+const int N6 = 512;
+int array6[N6];
+
+const int N7 = 4096;
+int array7[N7];
+
+void RandomArray(int* array, int N)
+{
+	for (int i = 0; i < N; ++i)
+	{
+		array[i] = rand();
+	}
+}
 
 int main()
 {
 	int int_array[5] = { 3, 7, 10, 9, 1 };
 	int int_array2[5] = { 5, 4, 1, 2, 3 };
 
-	uint64_t iterations = 1000;
+	uint64_t iterations = 100;
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-	
-	for (int i = 0; i < N; ++i)
-	{
-		std::cout << big_array[i] << " ";
-	}
+	RandomArray(array1, N1);
+	RandomArray(array2, N1);
+	RandomArray(array3, N1);
+	RandomArray(array4, N1);
+	RandomArray(array5, N1);
+	RandomArray(array6, N1);
+	RandomArray(array7, N1);
 
-	std::cout << std::endl;
-
-	sort::quick_sort_second_optimization(big_array, big_array + N - 1, sort::decrease_int);
-
-	/*// 4
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4", [&]
+	// 4
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 4", [&]
 		{
-			sort::insertion_sort(big_array, 0, 3);
+			RandomArray(array1, N1);
+			sort::insertion_sort(array1, array1 + N1 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 4", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 4", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 3);
+			RandomArray(array1, N1);
+			sort::quick_sort_second_optimization(array1, array1 + N1 - 1, sort::increase_int);
 		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	// 8
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 8", [&]
-		{
-			sort::insertion_sort(big_array, 0, 7);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 8", [&]
-		{
-			sort::quick_sort_second_optimization(big_array, 0, 7);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
 
 	// 16
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 16", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 16", [&]
 		{
-			sort::insertion_sort(big_array, 0, 15);
+			RandomArray(array2, N2);
+			sort::insertion_sort(array2, array2 + N2 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 16", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 16", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 15);
+			RandomArray(array2, N2);
+			sort::quick_sort_second_optimization(array2, array2 + N2 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
 
 	// 64
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 64", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 64", [&]
 		{
-			sort::insertion_sort(big_array, 0, 63);
+			RandomArray(array3, N3);
+			sort::insertion_sort(array3, array3 + N3 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 64", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 64", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 63);
+			RandomArray(array3, N3);
+			sort::quick_sort_second_optimization(array3, array3 + N3 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
+	// 128
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 100", [&]
+		{
+			RandomArray(array4, N4);
+			sort::insertion_sort(array3, array4 + N4 - 1, sort::increase_int);
+		});
+
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 100", [&]
+		{
+			RandomArray(array4, N4);
+			sort::quick_sort_second_optimization(array4, array4 + N4 - 1, sort::increase_int);
+		});
 
 	// 512
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 512", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 128", [&]
 		{
-			sort::insertion_sort(big_array, 0, 511);
+			RandomArray(array5, N5);
+			sort::insertion_sort(array5, array5 + N5 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 512", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 128", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 511);
+			RandomArray(array5, N5);
+			sort::quick_sort_second_optimization(array5, array5 + N5 - 1, sort::increase_int);
 		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	// 1024
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 1024", [&]
-		{
-			sort::insertion_sort(big_array, 0, 1023);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 1024", [&]
-		{
-			sort::quick_sort_second_optimization(big_array, 0, 1023);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	// 2048
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 2048", [&]
-		{
-			sort::insertion_sort(big_array, 0, 2047);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 2048", [&]
-		{
-			sort::quick_sort_second_optimization(big_array, 0, 2047);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
 
 	// 4096
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4096", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 512", [&]
 		{
-			sort::insertion_sort(big_array, 0, 4095);
+			RandomArray(array6, N6);
+			sort::insertion_sort(array6, array6 + N6 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 4096", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 512", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 4095);
+			RandomArray(array6, N6);
+			sort::quick_sort_second_optimization(array6, array6 + N6 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	// 8000
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 8000", [&]
+	// 1000
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Insertion, 4096", [&]
 		{
-			sort::insertion_sort(big_array, 0, 7999);
+			RandomArray(array7, N7);
+			sort::insertion_sort(array7, array7 + N7 - 1, sort::increase_int);
 		});
 
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 8000", [&]
+	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(10).run("Quick, 4096", [&]
 		{
-			sort::quick_sort_second_optimization(big_array, 0, 7999);
+			RandomArray(array7, N7);
+			sort::quick_sort_second_optimization(array7, array7 + N7 - 1, sort::increase_int);
 		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	// 10000
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 10000", [&]
-		{
-			sort::insertion_sort(big_array, 0, 9999);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-
-	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Quick, 10000", [&]
-		{
-			sort::quick_sort_second_optimization(big_array, 0, 9999);
-		});
-
-	for (int i = 0; i < N; ++i)
-	{
-		big_array[i] = rand();
-	}
-		*/
-
-	for (int i = 0; i < N; ++i)
-	{
-		std::cout << big_array[i] << " ";
-	}
-
-	std::cout << std::endl;
 
 	std::cin.ignore(2);
 

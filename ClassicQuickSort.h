@@ -33,15 +33,15 @@ namespace sort
 #pragma endregion
     // works fine
 #pragma region Not_Optimized
-    template <typename T>
-    T* partition(T* start, T* end)
+    template <typename T, typename Compare>
+    T* partition(T* start, T* end, Compare comp)
     {
         T pivot = *end;
         T* pivot_index = start - 1;
 
         for (T* j = start; j < end; ++j)
         {
-            if (*j <= pivot)
+            if (comp(*j, pivot))
             {
                 ++pivot_index;
                 std::swap(*pivot_index, *j);
@@ -53,15 +53,15 @@ namespace sort
         return pivot_index + 1;
     }
 
-    template <typename T>
-    void quick_sort_not_optimized(T* start, T* end)
+    template <typename T, typename Compare>
+    void quick_sort_not_optimized(T* start, T* end, Compare comp)
     {
         if (start >= end)
             return;
 
-        T* pivot_index = partition(start, end);
-        quick_sort_not_optimized(start, pivot_index - 1);
-        quick_sort_not_optimized(pivot_index + 1, end);
+        T* pivot_index = partition(start, end, comp);
+        quick_sort_not_optimized(start, pivot_index - 1, comp);
+        quick_sort_not_optimized(pivot_index + 1, end, comp);
     }
 
 #pragma endregion

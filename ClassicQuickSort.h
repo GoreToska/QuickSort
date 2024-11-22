@@ -3,11 +3,11 @@
 
 namespace sort
 {
-    inline bool int_greater(int a, int b) {
+    inline bool int_decrease(int a, int b) {
         return a > b;
     }
 
-    inline bool int_less(int a, int b) {
+    inline bool int_increase(int a, int b) {
         return a < b;
     }
     
@@ -68,16 +68,16 @@ namespace sort
 
     // works fine
 #pragma region First_Optimization
-    template <typename T>
-    T* get_median(T* start, T* end)
+    template <typename T, typename Compare>
+    T* get_median(T* start, T* end, Compare comp)
     {
         T* mid = start + (end - start) / 2;
 
-        if (*start > *mid)
+        if (comp(*start, *mid))
             std::swap(*start, *mid);
-        if (*start > *end)
+        if (comp(*start, *end))
             std::swap(*start, *end);
-        if (*mid > *end)
+        if (comp(*mid, *end))
             std::swap(*mid, *end);
 
         std::swap(*mid, *end);
@@ -85,16 +85,16 @@ namespace sort
         return end;
     }
 
-    template <typename T>
-    T* median_partition(T* start, T* end)
+    template <typename T, typename Compare>
+    T* median_partition(T* start, T* end, Compare comp)
     {
-        T* pivot_index = get_median(start, end);
+        T* pivot_index = get_median(start, end, comp);
         T pivot = *pivot_index;
         T* i = start - 1;
 
         for (T* j = start; j < end; ++j)
         {
-            if (*j > pivot)
+            if (!comp(*j, pivot))
                 continue;
 
             ++i;
@@ -105,22 +105,22 @@ namespace sort
         return i + 1;
     }
 
-    template <typename T>
-    void quick_sort_first_optimization(T* start, T* end)
+    template <typename T, typename Compare>
+    void quick_sort_first_optimization(T* start, T* end, Compare comp)
     {
         if (start >= end)
             return;
 
-        T* pivot_index = median_partition(start, end);
-        quick_sort_first_optimization(start, pivot_index - 1);
-        quick_sort_first_optimization(pivot_index + 1, end);
+        T* pivot_index = median_partition(start, end, comp);
+        quick_sort_first_optimization(start, pivot_index - 1, comp);
+        quick_sort_first_optimization(pivot_index + 1, end, comp);
     }
 #pragma endregion
 
     // works fine
 #pragma region Second_Optimization
-    template <typename T>
-    void quick_sort_iterative(T* start, T* end)
+    template <typename T, typename Compare>
+    void quick_sort_iterative(T* start, T* end, Compare comp)
     {
         if (end - start < 2)
             return;
@@ -135,7 +135,7 @@ namespace sort
             stack.pop();
             start = stack.top();
             stack.pop();
-            T* pivot = median_partition(start, end);
+            T* pivot = median_partition(start, end, comp);
 
             if (pivot - 1 > start)
             {
@@ -150,23 +150,23 @@ namespace sort
         }
     }
 
-    template <typename T>
-    void quick_sort_second_optimization(T* start, T* end)
+    template <typename T, typename Compare>
+    void quick_sort_second_optimization(T* start, T* end, Compare comp)
     {
         if (start >= end)
             return;
 
-        T* pivot_index = median_partition(start, end);
+        T* pivot_index = median_partition(start, end, comp);
 
         if (pivot_index - start > end - pivot_index)
         {
-            quick_sort_second_optimization(pivot_index + 1, end);
-            quick_sort_iterative(start, pivot_index - 1);
+            quick_sort_second_optimization(pivot_index + 1, end, comp);
+            quick_sort_iterative(start, pivot_index - 1, comp);
         }
         else
         {
-            quick_sort_iterative(pivot_index + 1, end);
-            quick_sort_second_optimization(start, pivot_index - 1);
+            quick_sort_iterative(pivot_index + 1, end, comp);
+            quick_sort_second_optimization(start, pivot_index - 1, comp);
         }
     }
 #pragma endregion

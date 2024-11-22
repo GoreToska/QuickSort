@@ -95,11 +95,10 @@ namespace sort
 	{
 		int pivot_index = get_median(array, start, end);
 		T pivot = array[pivot_index];
-
-		int i = pivot_index - 1;
-		for (int j = pivot_index; j < end; ++j)
+		int i = start - 1;
+		
+		for (int j = start; j < end; ++j)
 		{
-
 			if (array[j] > pivot)
 				continue;
 

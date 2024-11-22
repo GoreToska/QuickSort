@@ -5,7 +5,7 @@
 #include "Nanobench/Classes/nanobench.cpp"
 #include "ClassicQuickSort.h"
 
-const int N = 10000;
+const int N = 10;
 int big_array[N];
 
 int main()
@@ -20,7 +20,7 @@ int main()
 		big_array[i] = rand();
 	}
 
-	sort::insertion_sort(big_array, 0, N - 1);
+	sort::quick_sort_second_optimization(big_array, 0, N - 1);
 
 	/*// 4
 	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4", [&]

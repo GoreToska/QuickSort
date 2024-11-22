@@ -3,35 +3,30 @@
 
 namespace sort
 {
-    template <typename T>
-    bool decreasing_comparator(const T& a, const T& b)
-    {
+    inline bool int_greater(int a, int b) {
         return a > b;
     }
 
-    template <typename T>
-    bool increasing_comparator(const T& a, const T& b)
-    {
+    inline bool int_less(int a, int b) {
         return a < b;
     }
-
+    
 #pragma region Insertion_Sort
-    template <typename T>
-    void insertion_sort(T* start, T* end)
+    template <typename T, typename Compare>
+    void insertion_sort(T* start, T* end, Compare comp)
     {
-        for (T* i = start + 1; i <= end; ++i)
+        for (T* i = start + 1; i < end; ++i)
         {
             T key = *i;
-            for (T* j = i - 1; j >= start; --j)
-            {
-                if (*j < key)
-                {
-                    *(j + 1) = key;
-                    break;
-                }
+            T* j = i - 1;
 
+            while (j >= start && comp(key, *j))
+            {
                 *(j + 1) = *j;
+                --j;
             }
+
+            *(j + 1) = key;
         }
     }
 
@@ -39,7 +34,7 @@ namespace sort
     // works fine
 #pragma region Not_Optimized
     template <typename T>
-    T* partition( T* start, T* end)
+    T* partition(T* start, T* end)
     {
         T pivot = *end;
         T* pivot_index = start - 1;
@@ -156,7 +151,7 @@ namespace sort
     }
 
     template <typename T>
-    void quick_sort_second_optimization( T* start, T* end)
+    void quick_sort_second_optimization(T* start, T* end)
     {
         if (start >= end)
             return;
@@ -165,13 +160,13 @@ namespace sort
 
         if (pivot_index - start > end - pivot_index)
         {
-            quick_sort_second_optimization( pivot_index + 1, end);
-            quick_sort_iterative( start, pivot_index - 1);
+            quick_sort_second_optimization(pivot_index + 1, end);
+            quick_sort_iterative(start, pivot_index - 1);
         }
         else
         {
-            quick_sort_iterative( pivot_index + 1, end);
-            quick_sort_second_optimization( start, pivot_index - 1);
+            quick_sort_iterative(pivot_index + 1, end);
+            quick_sort_second_optimization(start, pivot_index - 1);
         }
     }
 #pragma endregion

@@ -8,6 +8,8 @@
 const int N = 10;
 int big_array[N];
 
+
+
 int main()
 {
 	int int_array[5] = { 3, 7, 10, 9, 1 };
@@ -20,7 +22,7 @@ int main()
 		big_array[i] = rand();
 	}
 
-	sort::quick_sort_second_optimization(big_array, big_array + N);
+	sort::insertion_sort(big_array, big_array + N, sort::int_greater);
 
 	/*// 4
 	ankerl::nanobench::Bench().minEpochIterations(iterations).warmup(100).run("Insertion, 4", [&]

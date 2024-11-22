@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 #include <random>
+
 #include "Nanobench/Classes/nanobench.cpp"
 #include "ClassicQuickSort.h"
+#include "CustomArray/Classes/array.hpp"
 
 const int N1 = 4;
 int array1[N1];
@@ -138,7 +140,29 @@ int main()
             RandomArray(array7, N7);
             sort::quick_sort_second_optimization(array7, array7 + N7 - 1, sort::increase_int);
         });*/
-    sort::sort(array7, array7 + N7, sort::decrease_int);
+
+    array<int> custom_array(10);
+
+    for (int i = 0; i < 10; ++i)
+    {
+        custom_array.insert(rand());
+    }
+
+    for (auto item : custom_array)
+    {
+        std::cout << item << " ";
+    }
+    
+    //sort::sort(array7, array7 + N7, sort::decrease_int);
+    sort::sort(custom_array.begin(), custom_array.end(), sort::decrease_int);
+
+    std::cout << "\n";
+
+    for (auto item : custom_array)
+    {
+        std::cout << item << " ";
+    }
+
     std::cin.ignore(2);
 
     return 0;

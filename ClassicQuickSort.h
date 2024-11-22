@@ -192,11 +192,9 @@ namespace sort
         if (end - start < insertion_threshold)
         {
             insertion_sort(start, end, comp);
-            std::cout<<"Insertion\n";
         }
         else
         {
-            std::cout<<"Quick\n";
             quick_sort_second_optimization(start, end, comp);
         }
     }

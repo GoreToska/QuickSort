@@ -3,7 +3,7 @@
 
 namespace sort
 {
-    int insertion_threshold = 350;
+    int insertion_threshold = 170;
 
     inline bool decrease_int(int a, int b)
     {
@@ -130,7 +130,6 @@ namespace sort
     }
 #pragma endregion
 
-    // works fine
 #pragma region Second_Optimization
     template <typename T, typename Compare>
     void quick_sort_iterative(T* start, T* end, Compare comp)
@@ -139,26 +138,28 @@ namespace sort
             return;
 
         std::stack<T*> stack;
+
         stack.push(start);
         stack.push(end);
 
         while (!stack.empty())
         {
-            end = stack.top();
+            T* right = stack.top();
             stack.pop();
-            start = stack.top();
+            T* left = stack.top();
             stack.pop();
-            T* pivot = median_partition(start, end, comp);
 
-            if (pivot - 1 > start)
+            T* pivot_index = median_partition(left, right, comp);
+
+            if (pivot_index - 1 > left)
             {
-                stack.push(start);
-                stack.push(pivot - 1);
+                stack.push(left);
+                stack.push(pivot_index - 1);
             }
-            if (pivot + 1 < end)
+            if (pivot_index + 1 < right)
             {
-                stack.push(pivot + 1);
-                stack.push(end);
+                stack.push(pivot_index + 1);
+                stack.push(right);
             }
         }
     }
@@ -173,13 +174,13 @@ namespace sort
 
         if (pivot_index - start > end - pivot_index)
         {
-            quick_sort_second_optimization(pivot_index + 1, end, comp);
-            quick_sort_iterative(start, pivot_index - 1, comp);
+            quick_sort_second_optimization(pivot_index, end, comp);
+            quick_sort_iterative(start, pivot_index, comp);
         }
         else
         {
-            quick_sort_iterative(pivot_index + 1, end, comp);
-            quick_sort_second_optimization(start, pivot_index - 1, comp);
+            quick_sort_second_optimization(start, pivot_index, comp);
+            quick_sort_iterative(pivot_index, end, comp);
         }
     }
 #pragma endregion

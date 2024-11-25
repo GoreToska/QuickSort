@@ -1,3 +1,5 @@
+#include <random>
+
 #include "gtest/gtest.h"
 #include "../ClassicQuickSort.h"
 
@@ -141,10 +143,12 @@ TEST(QuickSortNotOptimized, BigArray)
 {
     const int N = 19;
     int big_array[N];
-
+    std::random_device rd;
+    std::mt19937 mt1(rd());
+    
     for (int i = 0; i < N; ++i)
     {
-        big_array[i] = rand();
+        big_array[i] = mt1();
     }
 
     sort::quick_sort_not_optimized(big_array, big_array + std::size(big_array) - 1, sort::increase_int);
@@ -164,10 +168,12 @@ TEST(QuickSortFirstOptimization, BigArray)
 {
     const int N = 19;
     int big_array[N];
-
+    std::random_device rd;
+    std::mt19937 mt1(rd());
+    
     for (int i = 0; i < N; ++i)
     {
-        big_array[i] = rand();
+        big_array[i] = mt1();
     }
 
     sort::quick_sort_first_optimization(big_array, big_array + std::size(big_array) - 1, sort::increase_int);
@@ -187,10 +193,12 @@ TEST(QuickSortSecondOptimization, BigArray)
 {
     const int N = 19;
     int big_array[N];
-
+    std::random_device rd;
+    std::mt19937 mt1(rd());
+    
     for (int i = 0; i < N; ++i)
     {
-        big_array[i] = rand();
+        big_array[i] = mt1();
     }
     sort::quick_sort_second_optimization(big_array, big_array + std::size(big_array) - 1, sort::increase_int);
     for (int i = 0; i < N - 1; ++i)
@@ -209,7 +217,7 @@ TEST(MainSort, IntFloat)
 {
     int int_array[5] = {2, 3, 5, 4, 1};
     float float_array[5] = {2.01f, 3.33f, 5.21f, 4.31f, 1.95f};
-
+    
     sort::sort(int_array, int_array + std::size(int_array), sort::increase_int);
     EXPECT_EQ(int_array[0], 1);
     EXPECT_EQ(int_array[1], 2);
@@ -241,22 +249,31 @@ TEST(MainSort, IntFloat)
 
 TEST(MainSort, BigArray)
 {
-    const int N = 19;
+    const int N = 500;
     int big_array[N];
+    std::random_device rd;
+    std::mt19937 mt1(rd());
 
     for (int i = 0; i < N; ++i)
     {
-        big_array[i] = rand();
+        big_array[i] = mt1();
     }
-    sort::sort(big_array, big_array + std::size(big_array), sort::increase_int);
-    for (int i = 0; i < N - 1; ++i)
+    
+    sort::sort(big_array, big_array + N, sort::increase_int);
+
+    for (int i = 0; i < N; ++i)
     {
-        EXPECT_LT(big_array[i], big_array[i+1]);
+        std::cout << big_array[i] << " ";
     }
 
-    sort::sort(big_array, big_array + std::size(big_array), sort::decrease_int);
     for (int i = 0; i < N - 1; ++i)
     {
-        EXPECT_GT(big_array[i], big_array[i+1]);
+        EXPECT_LE(big_array[i], big_array[i+1]);
+    }
+
+    sort::sort(big_array, big_array + N, sort::decrease_int);
+    for (int i = 0; i < N - 1; ++i)
+    {
+        EXPECT_GE(big_array[i], big_array[i+1]);
     }
 }

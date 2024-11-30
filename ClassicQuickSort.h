@@ -36,11 +36,11 @@ namespace sort
 
             while (j >= start && comp(key, *j))
             {
-                *(j + 1) = *j;
+                new(j + 1)T(*j);
                 --j;
             }
 
-            *(j + 1) = key;
+            new (j + 1)T(key);
         }
     }
 

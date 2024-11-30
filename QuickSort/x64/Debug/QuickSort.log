@@ -1,25 +1,2 @@
 ﻿  QuickSort.cpp
-D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(67,11): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-  (компиляция исходного файла "QuickSort.cpp")
-      D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(67,11):
-      контекст создания экземпляра шаблона (сначала самый старый)
-          D:\CPP Projects\Algols\QuickSort\QuickSort.cpp(26,9):
-          выполняется компиляция ссылки на экземпляр шаблон функции "void sort::quick_sort_second_optimization<int>(T *,int,int)"
-          with
-          [
-              T=int
-          ]
-          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(153,21):
-          выполняется компиляция ссылки на экземпляр шаблон функции "int sort::median_partition<T>(T *,int,int)"
-          with
-          [
-              T=int
-          ]
-          D:\CPP Projects\Algols\QuickSort\ClassicQuickSort.h(84,21):
-          выполняется компиляция ссылки на экземпляр шаблон функции "int sort::get_median<T>(T *,int,int)"
-          with
-          [
-              T=int
-          ]
-  
   QuickSort.vcxproj -> D:\CPP Projects\Algols\QuickSort\x64\Debug\QuickSort.exe

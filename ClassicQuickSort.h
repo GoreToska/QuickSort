@@ -37,10 +37,12 @@ namespace sort
             while (j >= start && comp(key, *j))
             {
                 new(j + 1)T(*j);
+                (*j).~T();
                 --j;
             }
 
-            new (j + 1)T(key);
+            new(j + 1)T(key);
+            key.~T();
         }
     }
 
@@ -63,7 +65,6 @@ namespace sort
         }
 
         std::swap(*(pivot_index + 1), *end);
-
         return pivot_index + 1;
     }
 
@@ -169,7 +170,7 @@ namespace sort
     {
         if (start >= end)
             return;
-
+        
         T* pivot_index = median_partition(start, end, comp);
 
         if (pivot_index - start > end - pivot_index)

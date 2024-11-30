@@ -44,27 +44,8 @@ void run_warmup(int loops_count)
 
 void run_insertion_benchmark(int* array, int n, int loops_count = 100)
 {
-    auto elapsedSum = std::chrono::duration_cast<std::chrono::microseconds>(
+    auto elapsedSum = std::chrono::duration_cast<std::chrono::nanoseconds>(
         std::chrono::steady_clock::now() - std::chrono::steady_clock::now());
-
-    for (int i = 0; i < loops_count; ++i)
-    {
-        RandomArray(array, n);
-        sort::quick_sort_second_optimization(array, array + n - 1, sort::decrease_int);
-
-        auto start = std::chrono::steady_clock::now();
-        sort::insertion_sort(array, array + n - 1, sort::increase_int);
-        auto end = std::chrono::steady_clock::now();
-        elapsedSum += std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-    }
-
-    std::cout << "Insertion" << "\t" << n << "\t" << elapsedSum.count() / loops_count << "\tmicro seconds\n";
-}
-
-void run_quick_benchmark(int* array, int n, int loops_count = 100)
-{
-    auto elapsedSum = std::chrono::duration_cast<
-        std::chrono::microseconds>(std::chrono::steady_clock::now() - std::chrono::steady_clock::now());
 
     for (int i = 0; i < loops_count; ++i)
     {
@@ -72,36 +53,76 @@ void run_quick_benchmark(int* array, int n, int loops_count = 100)
         sort::insertion_sort(array, array + n - 1, sort::decrease_int);
 
         auto start = std::chrono::steady_clock::now();
-        sort::quick_sort_first_optimization(array, array + n - 1, sort::increase_int);
+        sort::insertion_sort(array, array + n - 1, sort::increase_int);
         auto end = std::chrono::steady_clock::now();
-        elapsedSum += std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+        elapsedSum += std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
     }
 
-    std::cout << "Quick" << "\t\t" << n << "\t" << elapsedSum.count() / loops_count << "\tmicro seconds\n";
+    std::cout << "Insertion" << "\t" << n << "\t" << elapsedSum.count() / loops_count << "\tnano seconds\n";
+}
+
+void run_quick_benchmark(int* array, int n, int loops_count = 100)
+{
+    auto elapsedSum = std::chrono::duration_cast<
+        std::chrono::nanoseconds>(std::chrono::steady_clock::now() - std::chrono::steady_clock::now());
+
+    for (int i = 0; i < loops_count; ++i)
+    {
+        RandomArray(array, n);
+        sort::insertion_sort(array, array + n - 1, sort::decrease_int);
+
+        auto start = std::chrono::steady_clock::now();
+        sort::quick_sort_not_optimized(array, array + n - 1, sort::increase_int);
+        auto end = std::chrono::steady_clock::now();
+        elapsedSum += std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    }
+
+    std::cout << "Quick" << "\t\t" << n << "\t" << elapsedSum.count() / loops_count << "\tnano seconds\n";
+}
+
+void run_quick_benchmark_end(int* array, int n, int loops_count = 100)
+{
+    auto elapsedSum = std::chrono::duration_cast<
+        std::chrono::nanoseconds>(std::chrono::steady_clock::now() - std::chrono::steady_clock::now());
+
+    for (int i = 0; i < loops_count; ++i)
+    {
+        RandomArray(array, n);
+        sort::insertion_sort(array, array + n - 1, sort::decrease_int);
+
+        auto start = std::chrono::steady_clock::now();
+        sort::sort(array, array + n - 1, sort::increase_int);
+        auto end = std::chrono::steady_clock::now();
+        elapsedSum += std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    }
+
+    std::cout << "Quick optimized" << "\t" << n << "\t" << elapsedSum.count() / loops_count << "\tnano seconds\n";
 }
 
 int main()
 {
-    int loops_count = 100000;
+    int loops_count = 1000;
     // TODO: mesure copy array
 
     run_warmup(1000);
-    run_insertion_benchmark(array8, 10,loops_count);
     run_quick_benchmark(array8, 10,loops_count);
-    run_insertion_benchmark(array8, 16,loops_count);
+    run_quick_benchmark_end(array8, 10,loops_count);
     run_quick_benchmark(array8, 16,loops_count);
-    run_insertion_benchmark(array8, 32,loops_count);
+    run_quick_benchmark_end(array8, 16,loops_count);
     run_quick_benchmark(array8, 32,loops_count);
-    run_insertion_benchmark(array8, 64,loops_count);
-    run_quick_benchmark(array8, 64,loops_count);
-    run_insertion_benchmark(array8, 80,loops_count);
+    run_quick_benchmark_end(array8, 32,loops_count);
+    run_quick_benchmark(array8, 40,loops_count);
+    run_quick_benchmark_end(array8, 40,loops_count);
     run_quick_benchmark(array8, 80,loops_count);
-    run_insertion_benchmark(array8, 100,loops_count);
+    run_quick_benchmark_end(array8, 80,loops_count);
     run_quick_benchmark(array8, 100,loops_count);
-    run_insertion_benchmark(array8, 128,loops_count);
+    run_quick_benchmark_end(array8, 100,loops_count);
     run_quick_benchmark(array8, 128,loops_count);
-    run_insertion_benchmark(array8, 170,loops_count);
+    run_quick_benchmark_end(array8, 128,loops_count);
     run_quick_benchmark(array8, 170,loops_count);
+    run_quick_benchmark_end(array8, 170,loops_count);
+
+    //run_quick_benchmark_end();
     // warmup
     /*run_warmup(loops_count);
 

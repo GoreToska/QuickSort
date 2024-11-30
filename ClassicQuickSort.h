@@ -3,7 +3,7 @@
 
 namespace sort
 {
-    int insertion_threshold = 170;
+    int insertion_threshold = 28;
 
     inline bool decrease_int(int a, int b)
     {
@@ -132,56 +132,46 @@ namespace sort
 #pragma endregion
 
 #pragma region Second_Optimization
-    template <typename T, typename Compare>
-    void quick_sort_iterative(T* start, T* end, Compare comp)
-    {
-        if (end - start < 2)
-            return;
-
-        std::stack<T*> stack;
-
-        stack.push(start);
-        stack.push(end);
-
-        while (!stack.empty())
-        {
-            T* right = stack.top();
-            stack.pop();
-            T* left = stack.top();
-            stack.pop();
-
-            T* pivot_index = median_partition(left, right, comp);
-
-            if (pivot_index - 1 > left)
-            {
-                stack.push(left);
-                stack.push(pivot_index - 1);
-            }
-            if (pivot_index + 1 < right)
-            {
-                stack.push(pivot_index + 1);
-                stack.push(right);
-            }
-        }
-    }
 
     template <typename T, typename Compare>
     void quick_sort_second_optimization(T* start, T* end, Compare comp)
     {
-        if (start >= end)
-            return;
-        
-        T* pivot_index = median_partition(start, end, comp);
+        while (end - start > 1)
+        {
+            T* pivot_index = median_partition(start, end, comp);
+            T* left = start;
+            T* right = end - 1;
 
-        if (pivot_index - start > end - pivot_index)
-        {
-            quick_sort_second_optimization(pivot_index, end, comp);
-            quick_sort_iterative(start, pivot_index, comp);
-        }
-        else
-        {
-            quick_sort_second_optimization(start, pivot_index, comp);
-            quick_sort_iterative(pivot_index, end, comp);
+            while (true)
+            {
+                while (left < right && comp(*left, *pivot_index))
+                {
+                    ++left;
+                }
+                while (left < right && comp(*pivot_index, *right))
+                {
+                    --right;
+                }
+                if (left >= right)
+                {
+                    break;
+                }
+
+                std::swap(*left, *right);
+                ++left;
+                --right;
+            }
+
+            if (pivot_index - start > end - pivot_index)
+            {
+                quick_sort_second_optimization(pivot_index, end, comp);
+                end = pivot_index;
+            }
+            else
+            {
+                quick_sort_second_optimization(start, pivot_index, comp);
+                start = pivot_index;
+            }
         }
     }
 #pragma endregion

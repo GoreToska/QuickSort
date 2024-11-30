@@ -245,6 +245,7 @@ TEST(MainSort, IntFloat)
     EXPECT_EQ(float_array[2], 3.33f);
     EXPECT_EQ(float_array[3], 2.01f);
     EXPECT_EQ(float_array[4], 1.95f);
+    
 }
 
 TEST(MainSort, BigArray)

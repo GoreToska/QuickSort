@@ -16,5 +16,11 @@
     &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.BigArray&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.IntFloat&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortEmptyArray&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortSingleElement&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortString&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortSortedStrings&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortStringsWithCases&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::1AB819C5-A62D-4A7A-A2EE-86C93BB85C3F::Windows,Version=v10.0.22621::MainSort.SortDuplicateStrings&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

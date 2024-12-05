@@ -145,7 +145,7 @@ TEST(QuickSortNotOptimized, BigArray)
     int big_array[N];
     std::random_device rd;
     std::mt19937 mt1(rd());
-    
+
     for (int i = 0; i < N; ++i)
     {
         big_array[i] = mt1();
@@ -170,7 +170,7 @@ TEST(QuickSortFirstOptimization, BigArray)
     int big_array[N];
     std::random_device rd;
     std::mt19937 mt1(rd());
-    
+
     for (int i = 0; i < N; ++i)
     {
         big_array[i] = mt1();
@@ -195,7 +195,7 @@ TEST(QuickSortSecondOptimization, BigArray)
     int big_array[N];
     std::random_device rd;
     std::mt19937 mt1(rd());
-    
+
     for (int i = 0; i < N; ++i)
     {
         big_array[i] = mt1();
@@ -217,7 +217,7 @@ TEST(MainSort, IntFloat)
 {
     int int_array[5] = {2, 3, 5, 4, 1};
     float float_array[5] = {2.01f, 3.33f, 5.21f, 4.31f, 1.95f};
-    
+
     sort::sort(int_array, int_array + std::size(int_array), sort::increase_int);
     EXPECT_EQ(int_array[0], 1);
     EXPECT_EQ(int_array[1], 2);
@@ -245,7 +245,6 @@ TEST(MainSort, IntFloat)
     EXPECT_EQ(float_array[2], 3.33f);
     EXPECT_EQ(float_array[3], 2.01f);
     EXPECT_EQ(float_array[4], 1.95f);
-    
 }
 
 TEST(MainSort, BigArray)
@@ -259,7 +258,7 @@ TEST(MainSort, BigArray)
     {
         big_array[i] = mt1();
     }
-    
+
     sort::sort(big_array, big_array + N, sort::increase_int);
 
     for (int i = 0; i < N; ++i)
@@ -277,4 +276,65 @@ TEST(MainSort, BigArray)
     {
         EXPECT_GE(big_array[i], big_array[i+1]);
     }
+}
+
+TEST(MainSort, SortEmptyArray)
+{
+    int arr[2] = {};
+    sort::sort(arr, arr + 0, sort::decrease_float);
+}
+
+TEST(MainSort, SortSingleElement)
+{
+    int arr[1] = {1};
+    sort::sort(arr, arr + 0, sort::decrease_float);
+    EXPECT_EQ(arr[0], 1);
+}
+
+TEST(MainSort, SortStrings)
+{
+    std::string arr[] = {"one", "two", "three"};
+    sort::sort(arr, arr + 3, std::less<std::string>());
+    EXPECT_EQ(arr[0], "one");
+    EXPECT_EQ(arr[1], "three");
+    EXPECT_EQ(arr[2], "two");
+}
+
+TEST(MainSort, SortSortedStrings)
+{
+    std::string arr[] = {"one", "three", "two"};
+    sort::sort(arr, arr + 3, std::less<std::string>());
+    EXPECT_EQ(arr[0], "one");
+    EXPECT_EQ(arr[1], "three");
+    EXPECT_EQ(arr[2], "two");
+}
+
+TEST(MainSort, SortStringsWithCases)
+{
+    std::string arr[] = {"one", "Two", "threE"};
+    sort::sort(arr, arr + 3, [](const std::string& a, const std::string& b)
+    {
+        return std::lexicographical_compare(
+            a.begin(), a.end(),
+            b.begin(), b.end(),
+            [](char a, char b)
+            {
+                return tolower(a) < tolower(b);
+            });
+    });
+
+    EXPECT_EQ(arr[0], "one");
+    EXPECT_EQ(arr[1], "threE");
+    EXPECT_EQ(arr[2], "Two");
+}
+
+TEST(MainSort, SortDuplicateStrings)
+{
+    std::string arr[] = {"one", "two", "three", "one", "two"};
+    sort::sort(arr, arr + 5, std::less<std::string>());
+    EXPECT_EQ(arr[0], "one");
+    EXPECT_EQ(arr[1], "one");
+    EXPECT_EQ(arr[2], "three");
+    EXPECT_EQ(arr[3], "two");
+    EXPECT_EQ(arr[4], "two");
 }
